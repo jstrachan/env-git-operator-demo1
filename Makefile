@@ -16,20 +16,9 @@ init:
 
 .PHONY: fetch
 fetch: init
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jx-labs/jenkins-x-crds@master $(FETCH_DIR)/cluster/crds
-	- kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jenkins-x/jx@master $(FETCH_DIR)/namespaces/jx
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jenkins-x/jxboot-helmfile-resources@master $(FETCH_DIR)/namespaces/jx
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jenkins-x/jx-config@master $(FETCH_DIR)/namespaces/jx
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jenkins-x/lighthouse@master $(FETCH_DIR)/namespaces/jx
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jenkins-x/pusher-wave@master $(FETCH_DIR)/namespaces/jx
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jenkins-x/tekton@master $(FETCH_DIR)/namespaces/jx
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/stable/nginx-ingress@master $(FETCH_DIR)/namespaces/nginx
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/external-secrets/kubernetes-external-secrets@master $(FETCH_DIR)/namespaces/vault-infra
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/jenkins-x/vault-instance@master $(FETCH_DIR)/namespaces/vault-infra
-	kpt pkg get https://github.com/jenkins-x/jxr-kube-resources.git/banzaicloud-stable/vault-operator@master $(FETCH_DIR)/namespaces/vault-infra
-
+	jx-gitops jx-apps template --dir . -o config-root
 	# this step is not required if using `helm template --namespace` for each chart
-	jx-gitops namespace --dir-mode --dir $(FETCH_DIR)/namespaces
+	#jx-gitops namespace --dir-mode --dir $(FETCH_DIR)/namespaces
 
 .PHONY: build
 # uncomment this line to enable kustomize
