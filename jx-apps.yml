@@ -5,3 +5,4 @@ apps:
 - name: jenkins-x/lighthouse
 - name: jenkins-x/tekton
 - name: external-secrets/kubernetes-external-secrets
+- name: banzaicloud-stable/vault-operator
