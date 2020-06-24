@@ -4,3 +4,4 @@ apps:
 - name: jenkins-x/jxboot-helmfile-resources
 - name: jenkins-x/lighthouse
 - name: jenkins-x/tekton
+- name: external-secrets/kubernetes-external-secrets
