@@ -2,8 +2,10 @@ autoUpdate:
   enabled: false
   schedule: ""
 bootConfigURL: https://github.com/jenkins-x/jxr-boot-config
-buildPackRef: kpt
-buildPackURL: https://github.com/jstrachan/jxr-packs-kubernetes.git
+buildPacks:
+  buildPackLibrary:
+    gitURL: https://github.com/jstrachan/jxr-packs-kubernetes.git
+    gitRef: kpt
 cluster:
   clusterName: tmpcluster
   devEnvApprovers:
