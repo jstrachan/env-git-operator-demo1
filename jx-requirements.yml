@@ -28,7 +28,7 @@ environments:
       production: false
   key: dev
   owner: jstrachan
-  repository: env-configsync-bootv3-scratch2
+  repository: env-configsync-bootv3-scratch4
 gitops: true
 ingress:
   domain: 34.76.100.223.nip.io
