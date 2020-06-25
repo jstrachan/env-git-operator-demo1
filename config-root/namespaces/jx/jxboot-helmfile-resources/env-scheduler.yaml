@@ -1,12 +1,10 @@
+---
 # Source: jxboot-helmfile-resources/templates/env-scheduler.yaml
 apiVersion: jenkins.io/v1
 kind: Scheduler
 metadata:
   creationTimestamp: null
   name: environment
-  namespace: jx
-  labels:
-    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   approve:
     issueRequired: false
