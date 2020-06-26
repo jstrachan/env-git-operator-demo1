@@ -1,0 +1,7 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: vault
+  namespace: vault-infra
+  labels:
+    gitops.jenkins-x.io/pipeline: 'environment'
