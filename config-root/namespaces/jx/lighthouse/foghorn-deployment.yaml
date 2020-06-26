@@ -12,7 +12,7 @@ metadata:
   annotations:
     wave.pusher.com/update-on-config-change: 'true'
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       draft: draft-app
