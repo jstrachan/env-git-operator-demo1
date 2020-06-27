@@ -5,6 +5,8 @@ metadata:
   name: "jenkins-x-pod-template-maven-java11"
   labels:
     jenkins.io/kind: podTemplate
+    gitops.jenkins-x.io/pipeline: 'environment'
+  namespace: jx
 data:
   pod: |-
     apiVersion: v1
@@ -29,7 +31,7 @@ data:
           secretName: jenkins-release-gpg
       containers:
       - name: maven
-        image: gcr.io/jenkinsxio/builder-maven-java11:2.1.84-714
+        image: gcr.io/jenkinsxio/builder-maven-java11:2.1.69-700
         args:
         - cat
         command:
