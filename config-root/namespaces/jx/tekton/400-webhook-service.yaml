@@ -1,3 +1,4 @@
+---
 # Source: tekton/templates/400-webhook-service.yaml
 # Copyright 2018 The Knative Authors
 #
@@ -12,17 +13,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 apiVersion: v1
 kind: Service
 metadata:
   labels:
     app: tekton-pipelines-webhook
-    gitops.jenkins-x.io/pipeline: 'environment'
   name: tekton-pipelines-webhook
-  namespace: jx
 spec:
   ports:
-  - port: 443
-    targetPort: 8443
+    - port: 443
+      targetPort: 8443
   selector:
     app: tekton-pipelines-webhook
