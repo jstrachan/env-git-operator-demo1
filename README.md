@@ -1,4 +1,32 @@
-# kpt + kustomize example
+# jx-git-operator example
+
+Install the [jx-git-operator](https://github.com/jenkins-x/jx-git-operator#installing)
+
+Create a secret:
+
+Setup a namespace:
+
+```bash 
+kubectl create ns jxb
+jx ns jxb
+```
+
+Setup the `ServiceAccount`  and cluster roles:
+
+```bash 
+kubectl apply -f .jx/git-operator/admin-resources
+```
+
+Now setup the `Secret` to enable the [jx-git-operator](https://github.com/jenkins-x/jx-git-operator) to start triggering the boot jobs:
+  
+```bash 
+kubectl create secret generic jx-boot --from-literal=url=https://$GIT_USERNAME:$GIT_TOKEN@github.com/jstrachan/env-configsync-bootv3-scratch4.git
+kubectl label secret jx-boot git-operator.jenkins.io/kind=git-operator
+```
+
+
+
+## Building locally
 
 To populate the local source run
 

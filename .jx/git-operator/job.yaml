@@ -22,7 +22,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: url
-              name: jx-git-operator-boot
+              name: jx-boot
         - name: GIT_REVISION
           value: master
         - name: GIT_SUB_DIR
