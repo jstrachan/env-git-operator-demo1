@@ -5,6 +5,8 @@ metadata:
   name: "jenkins-x-pod-template-aws-cdk"
   labels:
     jenkins.io/kind: podTemplate
+    gitops.jenkins-x.io/pipeline: 'environment'
+  namespace: jx
 data:
   pod: |-
     apiVersion: v1
@@ -29,7 +31,7 @@ data:
           secretName: jenkins-release-gpg
       containers:
       - name: aws-cdk
-        image: gcr.io/jenkinsxio/builder-maven-nodejs:2.1.84-714
+        image: gcr.io/jenkinsxio/builder-maven-nodejs:2.1.69-700
         args:
         - cat
         command:
