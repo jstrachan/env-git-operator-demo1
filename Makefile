@@ -18,7 +18,7 @@ init:
 fetch: init
 	jx-gitops jx-apps template -o config-root/namespaces
 	# this step is not required if using `helm template --namespace` for each chart
-	#jx-gitops namespace --dir-mode --dir $(FETCH_DIR)/namespaces
+	jx-gitops namespace --dir-mode --dir $(FETCH_DIR)/namespaces
 
 .PHONY: build
 # uncomment this line to enable kustomize
