@@ -16,8 +16,7 @@ init:
 
 .PHONY: fetch
 fetch: init
-	jx-gitops jx-apps template -o config-root/namespaces
-	# this step is not required if using `helm template --namespace` for each chart
+	jx-gitops jx-apps template -o $(OUTPUT_DIR)/namespaces
 	jx-gitops namespace --dir-mode --dir $(OUTPUT_DIR)/namespaces
 
 .PHONY: build
