@@ -11,7 +11,7 @@ kubectl create ns jxb
 jx ns jxb
 ```
 
-Setup the `ServiceAccount`  and cluster roles:
+Setup the `ServiceAccount`  and cluster roles (you will need to be a `cluster-admin` for this):
 
 ```bash 
 kubectl apply -f .jx/git-operator/admin-resources
