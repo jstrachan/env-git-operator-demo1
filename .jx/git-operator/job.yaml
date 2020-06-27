@@ -58,7 +58,7 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Never
       schedulerName: default-scheduler
-      serviceAccountName: tekton-bot
+      serviceAccountName: jx-boot-job
       terminationGracePeriodSeconds: 30
       volumes:
       - name: workspace-volume
