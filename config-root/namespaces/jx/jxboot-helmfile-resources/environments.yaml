@@ -1,3 +1,4 @@
+---
 # Source: jxboot-helmfile-resources/templates/environments.yaml
 apiVersion: jenkins.io/v1
 kind: Environment
@@ -5,13 +6,11 @@ metadata:
   labels:
     env: "dev"
     team: jx
-    gitops.jenkins-x.io/pipeline: 'environment'
   name: "dev"
-  namespace: jx
 spec:
   source:
     ref: "master"
-    url: git@github.com:jstrachan/env-configsync-bootv3-scratch4.git
+    url: https://github.com/myorg/environment-mycluster-dev.git
   kind: Development
   label: Development
   namespace: jx

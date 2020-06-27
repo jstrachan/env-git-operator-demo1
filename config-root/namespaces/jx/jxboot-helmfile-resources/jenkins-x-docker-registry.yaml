@@ -1,3 +1,4 @@
+---
 # Source: jxboot-helmfile-resources/templates/jenkins-x-docker-registry.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -5,8 +6,5 @@ metadata:
   name: jenkins-x-docker-registry
   annotations:
     expose.config.fabric8.io/clusterip-port-if-empty-key: docker.registry
-  namespace: jx
-  labels:
-    gitops.jenkins-x.io/pipeline: 'environment'
 data:
   docker.registry: gcr.io
