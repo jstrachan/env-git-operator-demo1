@@ -1,4 +1,3 @@
----
 # Source: nexus/templates/pvc.yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -9,9 +8,10 @@ metadata:
     chart: "nexus-0.1.30"
     release: "nexus"
     heritage: "Helm"
+    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   accessModes:
-    - "ReadWriteOnce"
+  - "ReadWriteOnce"
   resources:
     requests:
       storage: "8Gi"
