@@ -1,10 +1,12 @@
----
 # Source: jxboot-helmfile-resources/templates/jenkins-x-extensions-config.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: "jenkins-x-extensions"
-data:  
+  namespace: jx
+  labels:
+    gitops.jenkins-x.io/pipeline: 'environment'
+data:
   knownRepositories: |
     repositories:
     - chart: {}
