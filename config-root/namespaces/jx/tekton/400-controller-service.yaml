@@ -1,3 +1,4 @@
+---
 # Source: tekton/templates/400-controller-service.yaml
 # Copyright 2018 Knative Authors LLC
 #
@@ -12,14 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 apiVersion: v1
 kind: Service
 metadata:
   labels:
     app: tekton-pipelines-controller
-    gitops.jenkins-x.io/pipeline: 'environment'
   name: tekton-pipelines-controller
-  namespace: jx
 spec:
   ports:
   - name: metrics

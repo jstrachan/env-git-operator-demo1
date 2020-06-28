@@ -1,3 +1,4 @@
+---
 # Source: tekton/templates/config-logging.yaml
 # Copyright 2018 Knative Authors LLC
 #
@@ -12,13 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: config-logging
-  namespace: jx
-  labels:
-    gitops.jenkins-x.io/pipeline: 'environment'
 data:
   # Common configuration for all knative codebase
   zap-logger-config: |
@@ -46,6 +45,7 @@ data:
         "callerEncoder": ""
       }
     }
+
   # Log level overrides
   loglevel.controller: "info"
   loglevel.webhook: "info"
