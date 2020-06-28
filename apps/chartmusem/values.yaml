@@ -1,0 +1,4 @@
+secrets:
+  adminUser:
+    username: dummy
+    password: dummy
