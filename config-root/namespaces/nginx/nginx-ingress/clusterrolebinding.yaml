@@ -1,3 +1,4 @@
+---
 # Source: nginx-ingress/templates/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -7,13 +8,12 @@ metadata:
     chart: nginx-ingress-1.39.1
     heritage: Helm
     release: nginx-ingress
-    gitops.jenkins-x.io/pipeline: 'environment'
   name: nginx-ingress
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: nginx-ingress
 subjects:
-- kind: ServiceAccount
-  name: nginx-ingress
-  namespace: nginx
+  - kind: ServiceAccount
+    name: nginx-ingress
+    namespace: nginx
