@@ -1,3 +1,4 @@
+---
 # Source: nexus/templates/config.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -5,8 +6,5 @@ metadata:
   name: nexus
   annotations:
     expose.config.fabric8.io/path-key: context.path
-  namespace: jx
-  labels:
-    gitops.jenkins-x.io/pipeline: 'environment'
 data:
   context.path: /
