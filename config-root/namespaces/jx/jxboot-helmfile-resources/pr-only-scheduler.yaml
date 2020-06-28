@@ -1,12 +1,10 @@
+---
 # Source: jxboot-helmfile-resources/templates/pr-only-scheduler.yaml
 apiVersion: jenkins.io/v1
 kind: Scheduler
 metadata:
   creationTimestamp: null
   name: pr-only
-  namespace: jx
-  labels:
-    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   approve:
     issueRequired: false
