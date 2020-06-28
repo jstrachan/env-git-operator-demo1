@@ -1,4 +1,3 @@
----
 # Source: jxboot-helmfile-resources/templates/700-nexus-ing.yaml
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
@@ -6,6 +5,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
   name: nexus
+  namespace: jx
+  labels:
+    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   rules:
   - http:

@@ -1,4 +1,3 @@
----
 # Source: lighthouse/templates/gc-jobs-cj.yaml
 apiVersion: batch/v1beta1
 kind: CronJob
@@ -6,6 +5,8 @@ metadata:
   name: lighthouse-gc-jobs
   labels:
     app: jenkins-x-lighthouse-gcjobs
+    gitops.jenkins-x.io/pipeline: 'environment'
+  namespace: jx
 spec:
   concurrencyPolicy: Forbid
   failedJobsHistoryLimit: 1
@@ -21,17 +22,17 @@ spec:
             release: lighthouse
         spec:
           containers:
-            - command:
-                - /gc-jobs
-              image: gcr.io/jenkinsxio/lighthouse-gc-jobs:0.0.633
-              imagePullPolicy: IfNotPresent
-              args:
-                - "--namespace=jx"
-                - "--max-age=168h"
-              name: lighthouse-gc-jobs
-              resources: {}
-              terminationMessagePath: /dev/termination-log
-              terminationMessagePolicy: File
+          - command:
+            - /gc-jobs
+            image: gcr.io/jenkinsxio/lighthouse-gc-jobs:0.0.633
+            imagePullPolicy: IfNotPresent
+            args:
+            - "--namespace=jx"
+            - "--max-age=168h"
+            name: lighthouse-gc-jobs
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
           dnsPolicy: ClusterFirst
           restartPolicy: Never
           schedulerName: default-scheduler
