@@ -1,3 +1,4 @@
+---
 # Source: nexus/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -8,11 +9,8 @@ metadata:
     chart: nexus-0.1.30
     release: nexus
     heritage: Helm
-    gitops.jenkins-x.io/pipeline: 'environment'
   annotations:
     configmap.fabric8.io/update-on-change: nexus
-    wave.pusher.com/update-on-config-change: 'true'
-  namespace: jx
 spec:
   selector:
     matchLabels:
@@ -47,7 +45,7 @@ spec:
               command:
               - /opt/sonatype/nexus/postStart.sh
         ports:
-        - containerPort: 8081
+          - containerPort: 8081
         livenessProbe:
           httpGet:
             path: /
@@ -61,18 +59,20 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 30
           failureThreshold: 6
-        resources: null
+        resources:
+            null
         volumeMounts:
-        - mountPath: /nexus-data
-          name: nexus-data-volume
-        - mountPath: /opt/sonatype/nexus/config
-          name: nexus
+          - mountPath: /nexus-data
+            name: nexus-data-volume
+          - mountPath: /opt/sonatype/nexus/config
+            name: nexus
+
       volumes:
-      - name: nexus
-        secret:
-          secretName: nexus
-      - name: nexus-data-volume
-        persistentVolumeClaim:
-          claimName: nexus-nexus
+        - name: nexus
+          secret:
+            secretName: nexus
+        - name: nexus-data-volume
+          persistentVolumeClaim:
+            claimName: nexus-nexus
       securityContext:
         fsGroup: 2000
