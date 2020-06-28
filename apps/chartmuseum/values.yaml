@@ -1,4 +1,0 @@
-env:
-  secret:
-    BASIC_AUTH_USER: dummy
-    BASIC_AUTH_PASS: dummy
