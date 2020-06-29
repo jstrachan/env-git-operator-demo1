@@ -1,4 +1,3 @@
----
 # Source: chartmuseum/templates/pvc.yaml
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -7,9 +6,11 @@ metadata:
   labels:
     app: chartmuseum-chartmuseum
     release: "chartmuseum"
+    gitops.jenkins-x.io/pipeline: 'environment'
+  namespace: jx
 spec:
   accessModes:
-    - "ReadWriteOnce"
+  - "ReadWriteOnce"
   resources:
     requests:
       storage: "8Gi"

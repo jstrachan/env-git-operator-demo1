@@ -1,4 +1,3 @@
----
 # Source: jxboot-helmfile-resources/templates/repositories.yaml
 apiVersion: jenkins.io/v1
 kind: SourceRepository
@@ -6,6 +5,8 @@ metadata:
   name: "dev"
   labels:
     jenkins.io/gitSync: "false"
+    gitops.jenkins-x.io/pipeline: 'environment'
+  namespace: jx
 spec:
   provider: "https://github.com"
   providerName: 'github'
