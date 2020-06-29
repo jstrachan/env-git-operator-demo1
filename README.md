@@ -2,10 +2,10 @@
 
 Install the [jx-git-operator](https://github.com/jenkins-x/jx-git-operator#installing)
 
-Now [setup]() the `Secret` to enable the [jx-git-operator](https://github.com/jenkins-x/jx-git-operator) to start triggering the boot jobs:
+Now [setup](https://github.com/jenkins-x/jx-git-operator#create-the-git-url-secret) the `Secret` to enable the [jx-git-operator](https://github.com/jenkins-x/jx-git-operator) to start triggering the boot jobs:
   
 ```bash 
-kubectl create secret generic jx-boot --from-literal=url=https://$GIT_USERNAME:$GIT_TOKEN@github.com/jstrachan/env-configsync-bootv3-scratch4.git
+kubectl create secret generic jx-boot --from-literal=url=https://$GIT_USERNAME:$GIT_TOKEN@github.com/jstrachan/env-git-operator-demo1.git
 kubectl label secret jx-boot git-operator.jenkins.io/kind=git-operator
 ```
 
