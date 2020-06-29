@@ -68,7 +68,7 @@ all: clean fetch build lint
 
 
 .PHONY: pr
-pr: all
+pr: all commit
 
 .PHONY: release
 release: lint
