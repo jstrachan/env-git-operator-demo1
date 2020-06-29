@@ -1,3 +1,4 @@
+---
 # Source: lighthouse/templates/webhooks-service.yaml
 apiVersion: v1
 kind: Service
@@ -5,8 +6,6 @@ metadata:
   name: hook
   labels:
     chart: "lighthouse-0.0.633"
-    gitops.jenkins-x.io/pipeline: 'environment'
-  namespace: jx
 spec:
   type: ClusterIP
   ports:
