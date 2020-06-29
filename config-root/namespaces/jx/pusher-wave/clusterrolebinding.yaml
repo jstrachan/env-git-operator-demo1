@@ -1,4 +1,3 @@
----
 # Source: pusher-wave/templates/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
@@ -8,12 +7,13 @@ metadata:
     release: "pusher-wave"
     chart: "pusher-wave-1.0.0"
     heritage: "Helm"
+    gitops.jenkins-x.io/pipeline: 'environment'
   name: pusher-wave-pusher-wave
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: pusher-wave-pusher-wave
 subjects:
-  - kind: ServiceAccount
-    name: pusher-wave-pusher-wave
-    namespace: jx
+- kind: ServiceAccount
+  name: pusher-wave-pusher-wave
+  namespace: jx
