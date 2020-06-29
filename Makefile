@@ -65,3 +65,11 @@ commit:
 
 .PHONY: all
 all: clean fetch build lint
+
+
+.PHONY: pr
+pr: all
+
+.PHONY: release
+release: lint
+
