@@ -30,10 +30,10 @@ environments:
       production: false
   key: dev
   owner: jstrachan
-  repository: env-configsync-bootv3-scratch4
+  repository: env-git-operator-demo1
 gitops: true
 ingress:
-  domain: 34.76.100.223.nip.io
+  domain: ""
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
