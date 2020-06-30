@@ -18,12 +18,10 @@ kind: Service
 metadata:
   labels:
     app: tekton-pipelines-webhook
-    gitops.jenkins-x.io/pipeline: 'environment'
   name: tekton-pipelines-webhook
-  namespace: jx
 spec:
   ports:
-  - port: 443
-    targetPort: 8443
+    - port: 443
+      targetPort: 8443
   selector:
     app: tekton-pipelines-webhook
