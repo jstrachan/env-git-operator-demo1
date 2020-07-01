@@ -4,8 +4,6 @@ kind: Scheduler
 metadata:
   creationTimestamp: null
   name: release-only
-  labels:
-    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   approve:
     issueRequired: false
