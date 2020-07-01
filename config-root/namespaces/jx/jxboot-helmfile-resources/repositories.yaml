@@ -5,6 +5,7 @@ metadata:
   name: "dev"
   labels:
     jenkins.io/gitSync: "false"
+    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   provider: "https://github.com"
   providerName: 'github'

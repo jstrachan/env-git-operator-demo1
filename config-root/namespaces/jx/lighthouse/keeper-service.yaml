@@ -3,6 +3,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lighthouse-keeper
+  labels:
+    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   type: ClusterIP
   selector:

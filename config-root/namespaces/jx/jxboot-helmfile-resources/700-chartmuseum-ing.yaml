@@ -5,6 +5,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
   name: chartmuseum
+  labels:
+    gitops.jenkins-x.io/pipeline: 'environment'
 spec:
   rules:
   - http:

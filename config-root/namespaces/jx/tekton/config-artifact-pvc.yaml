@@ -17,6 +17,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: config-artifact-pvc
+  labels:
+    gitops.jenkins-x.io/pipeline: 'environment'
 data:
   # default size of the PVC mounted
   size: "5Gi"
