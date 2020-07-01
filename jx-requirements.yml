@@ -7,7 +7,7 @@ buildPacks:
     gitRef: kpt
     gitURL: https://github.com/jstrachan/jxr-packs-kubernetes.git
 cluster:
-  clusterName: tmpcluster
+  clusterName: tmpcluster8
   devEnvApprovers:
   - jstrachan
   environmentGitOwner: jstrachan
@@ -18,7 +18,7 @@ cluster:
   project: jstrachan-multicluster
   provider: gke
   registry: gcr.io
-  zone: europe-west1-d
+  zone: europe-west1-b
 environments:
 - ingress:
     domain: ""
