@@ -1,0 +1,22 @@
+# Source: chartmuseum/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: chartmuseum-chartmuseum
+  annotations:
+    {}
+  labels:
+    app: chartmuseum
+    chart: chartmuseum-1.1.7
+    heritage: "Helm"
+    release: "chartmuseum"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: http
+    protocol: TCP
+    name: http
+  selector:
+    app: chartmuseum
+    release: "chartmuseum"
