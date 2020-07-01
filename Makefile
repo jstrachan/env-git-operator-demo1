@@ -59,8 +59,8 @@ apply:
 
 .PHONY: commit
 commit:
-	git add --all
-	- git commit -m "chore: regenerated"
+	git add $(OUTPUT_DIR)
+	git commit -m "chore: regenerated" --allow-empty
 	git push
 
 .PHONY: all
