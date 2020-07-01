@@ -5,6 +5,7 @@ metadata:
   labels:
     env: "dev"
     team: jx
+    gitops.jenkins-x.io/pipeline: 'environment'
   name: "dev"
 spec:
   source:

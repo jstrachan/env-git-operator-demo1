@@ -9,3 +9,5 @@ data:
 kind: ConfigMap
 metadata:
   name: ingress-config
+  labels:
+    gitops.jenkins-x.io/pipeline: 'environment'
