@@ -1,14 +1,11 @@
 # Source: jxboot-helmfile-resources/templates/ingress-config-configmap.yaml
 apiVersion: v1
 data:
-  domain: "cluster.local"
+  domain: "146.148.118.30.nip.io"
   email: ""
   exposer: "Ingress"
   issuer: ""
-  tls: "true"
+  tls: "false"
 kind: ConfigMap
 metadata:
   name: ingress-config
-  namespace: jx
-  labels:
-    gitops.jenkins-x.io/pipeline: 'environment'
