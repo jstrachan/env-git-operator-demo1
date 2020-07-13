@@ -1,3 +1,5 @@
+kind: Ignore
+
 jxRequirements:
   ingress:
     domain: cluster.local

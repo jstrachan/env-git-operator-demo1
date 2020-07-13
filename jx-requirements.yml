@@ -33,7 +33,7 @@ environments:
   repository: env-git-operator-demo1
 gitops: true
 ingress:
-  domain: ""
+  domain: 146.148.118.30.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
